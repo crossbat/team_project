@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<header class="bg-dark">
+	<div class="container-fluid p-5">
+		<div class="row gx-5 py-5 mb-5 justify-content-center">
+			<div class = "col-lg-3 d-flex justify-content-center align-items-center">
+				<div>
+					<a href="{% url 'index:index' %}" class = "d-inline-block fs-1 text-muted">
+						<i class = "bi bi-caret-left-fill"></i>
+					</a>
+					<a href="{% url 'index:index' %}" class = "d-inline-block fs-1 text-muted">
+						<i class = "bi bi-house"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-6 d-flex justify-content-center align-items-center">
+				<div class="text-center my-5">
+					<h1 class="display-5 fw-bolder text-white mb-2 pb-4">간행물 게시판</h1>
+				</div>
+			</div>
+			<div class = "col-lg-3 d-flex justify-content-center align-items-center">
+				<div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- Card section-->
+<div class = "container my-5 pt-5">
+	<div class = "container-lg row">
+		<div class = "col-3 d-flex justify-content-center align-items-center">
+			<div class = "card" style = "width : 15rem">
+				<img src= {% static "image/example2.jpg" %} alt="" class = "card-img-top img-thumbnail" style = "width : 15rem; height : 12rem; object-fit : cover">
+				<div class = "card-body">
+					<h6 class = "card-title">Test Data</h6>
+					<div class = "card-subtitle text-muted">Writer</div>
+				</div>
+			</div>
+		</div>
+		<div class = "col-3 d-flex justify-content-center align-items-center">
+			<div class = "card" style = "width : 15rem">
+				<img src= {% static "image/example2.jpg" %} alt="" class = "card-img-top img-thumbnail" style = "width : 15rem; height : 12rem; object-fit : cover">
+				<div class = "card-body">
+					<h6 class = "card-title">Test Data</h6>
+					<div class = "card-subtitle text-muted">Writer</div>
+				</div>
+			</div>
+		</div>
+		<div class = "col-3 d-flex justify-content-center align-items-center">
+			<div class = "card" style = "width : 15rem">
+				<img src= {% static "image/example2.jpg" %} alt="" class = "card-img-top img-thumbnail" style = "width : 15rem; height : 12rem; object-fit : cover">
+				<div class = "card-body">
+					<h6 class = "card-title">Test Data</h6>
+					<div class = "card-subtitle text-muted">Writer</div>
+				</div>
+			</div>
+		</div>
+		<div class = "col-3 d-flex justify-content-center align-items-center">
+			<div class = "card" style = "width : 15rem">
+				<img src= {% static "image/example2.jpg" %} alt="" class = "card-img-top img-thumbnail" style = "width : 15rem; height : 12rem; object-fit : cover">
+				<div class = "card-body">
+					<h6 class = "card-title">Test Data</h6>
+					<div class = "card-subtitle text-muted">Writer</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<nav  aria-label="Page navigation example">
+		<ul class="pagination justify-content-center pt-5 pb-3">
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+{% endblock %}

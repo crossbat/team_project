@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Header-->
+<header class="bg-dark" style="padding-top : 100px; padding-bottom :100px">
+	<div class="container px-5 py-5">
+		<div class="row gx-5 justify-content-center">
+			<div class="col-lg-6">
+				<div class="text-center my-5">
+					<h1 class="display-5 fw-bolder text-white mb-2">Write Something to Insert</h1>
+					<p class="lead text-white-50 mb-4">Write Something you want!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- Event section-->
+<section class="py-5 border-bottom" id="features">
+	<div class="container-fluid px-5 my-5">
+		<div class="row gx-5 justify-content-center">
+			<div class="col-5">
+				<div class="d-flex text-dark mb-1 align-items-center fs-2">
+					<i class="bi bi-caret-right-fill"></i>
+					<span class="fs-3 fw-bolder" style = "padding-left : 15px;">공지사항</span>
+				</div>
+				<table class = "table fs-5">
+					{% for noti in noti_list %}
+					<tr>
+						<td><a href="" class = "text-decoration-none text-black">{{noti.subject}}</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+				<div class = "d-flex justify-content-end">
+					<a class="text-decoration-none" href="{% url 'eventNews:event' %}">
+						더보기
+						<i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-5">
+				<div class="d-flex text-dark mb-1 align-items-center fs-2">
+					<i class="bi bi-caret-right-fill"></i>
+					<span class="fs-3 fw-bolder" style = "padding-left : 15px;">뉴스</span>
+				</div>
+				<table class = "table fs-5">
+					{% for news in news_list%}
+					<tr>
+						<td><a href="" class = "text-decoration-none text-black">{{news.subject}}</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+				<div class = "d-flex justify-content-end">
+					<a class="text-decoration-none" href="{% url 'eventNews:news' %}">
+						더보기
+						<i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Publications section-->
+<section class="bg-light border-bottom" style = "padding : 10vw 0">
+	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class = "row justify-content-center">
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="{% url 'Post:post' %}">
+									<img src={% static "image/example1.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example2.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example3.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class = "row justify-content-center">
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example1.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example2.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example3.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class = "row justify-content-center">
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+								<img src={% static "image/example1.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example2.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "col-3">
+						<div class = "card d-block">
+							<div class = "card-body">
+								<a href="#">
+									<img src={% static "image/example3.jpg"%} alt="..." class = "w-100">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</section>
+<!-- Vision/Mission image section-->
+<section class="py-5 border-bottom">
+	<img src={% static "image/mission_example.jpg"%} alt="비전, 미션 이미지가 들어올 자리 입니다." class = "mx-auto d-block w-50">
+</section>
+{% endblock %}

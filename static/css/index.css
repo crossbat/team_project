@@ -1,0 +1,13 @@
+#MOVE_TOP_BTN {
+  position: fixed;
+  left: 2%;
+  bottom: 50px;
+  display: none;
+  z-index: 999;
+}
+
+@media (max-width: 1400px){
+  .dropdown-menu{
+	margin-left : 63px;
+  }
+}
