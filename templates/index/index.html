@@ -69,12 +69,12 @@
 				<table class = "table fs-5">
 					{% for noti in noti_list %}
 					<tr>
-						<td><a href="" class = "text-decoration-none text-black">{{noti.subject}}</a></td>
+						<td><a href="/event/{{ noti.id }}" class = "text-decoration-none text-black">{{noti.subject}}</a></td>
 					</tr>
 					{% endfor %}
 				</table>
 				<div class = "d-flex justify-content-end">
-					<a class="text-decoration-none" href="{% url 'eventNews:event' %}">
+					<a class="text-decoration-none" href="{% url 'event:event' %}">
 						더보기
 						<i class="bi bi-arrow-right"></i>
 					</a>
@@ -88,12 +88,12 @@
 				<table class = "table fs-5">
 					{% for news in news_list%}
 					<tr>
-						<td><a href="" class = "text-decoration-none text-black">{{news.subject}}</a></td>
+						<td><a href="/news/{{ news.id }}" class = "text-decoration-none text-black">{{news.subject}}</a></td>
 					</tr>
 					{% endfor %}
 				</table>
 				<div class = "d-flex justify-content-end">
-					<a class="text-decoration-none" href="{% url 'eventNews:news' %}">
+					<a class="text-decoration-none" href="{% url 'news:news' %}">
 						더보기
 						<i class="bi bi-arrow-right"></i>
 					</a>

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark">
+	<div class="container-fluid px-5 pt-5">
+		<div class="row gx-5 py-5 justify-content-center">
+			<div class="col-lg-6 d-flex justify-content-center align-items-center">
+				<div class="text-center my-5">
+					<h1 class="display-5 fw-bolder text-white ">협회소식</h1>
+				</div>
+			</div>
+				<div class = "d-flex justify-content-center">
+					<span class = "little_nav"><a class = "channel" href="{% url 'event:event' %}">공지사항</a></span>
+					<span class = "little_nav">|</span>
+					<span class = "little_nav"><a class = "channel" href="{% url 'news:news' %}">뉴스</a></span>
+				</div>
+		</div>
+	</div>
+</header>
+<section class = 'container'>
+	<div class = 'd-flex justify-content-center'>
+		<p class = 'display-6 fw-bolder p-5 mt-3 border-bottom text-cetner'>공지사항</p>
+	</div>
+</section>
+<!-- List section-->
+<div class = "tab-content" id = "pills-tabContent">
+	<div class = "tab-pane fade show active container p-5" id = "pills-noti" role = "tabpanel" aria-labelledby = "pills-noti-tab">
+		<div class = 'container row d-flex justify-content-center'>
+			<div class = 'col-10'>
+				<table class="table table-hover">
+					<thead>
+						<tr style = "3vw">
+							<th class = "col-1" scope="col">번호</th>
+							<th class = "col-5" scope="col">제목</th>
+							<th class = "col-3" scope="col">작성자</th>
+							<th class = "col-3" scope="col">작성일자</th>
+						</tr>
+					</thead>
+					<tbody class = "table-group-divider">
+						{% for noti in noti_list %}
+						<tr style = "1vw">
+							<th scope="row">{{forloop.counter}}</th>
+							<td>
+								<a href="/event/{{ noti.id }}" class = "text-decoration-none text-black">{{noti.subject}}</a>
+							</td>
+							<td>{{noti.writer}}</td>
+							<td>{{noti.create_date}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class="pagination justify-content-center pt-5 pb-3">
+			<!-- 이전 페이지  -->
+			{% if noti_list.has_previous%}
+			<li class = "page-item">
+				<a class = "page-link" href="?event = {{noti_list.previous_page_number}}">이전</a>
+			</li>
+			{% else %}
+			<li class="page-item disabled">
+				<a class="page-link" tabindex = "-1" href="#" aria-disabled="true">이전</a>
+			</li>
+			{% endif %}
+			<!-- 페이지 리스트 -->
+			{% for page_number in noti_list.paginator.page_range %}
+			{% if page_number >= noti_list.number|add:-5 and page_number <= noti_list.number|add:5 %}
+			{% if page_number == noti_list.number %}
+			<li class="page-item active" aria-current = "page">
+				<a class="page-link" href="?event={{page_number}}">{{page_number}}</a>
+			</li>
+			{% else %}
+			<li class="page-item">
+				<a class="page-link" href="?event={{page_number}}">{{page_number}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+			<!-- 다음 페이지 -->
+			{% if noti_list.has_next %}
+			<li class="page-item">
+				<a class="page-link" href="?event={{noti_list.next_page_number}}" aria-label="Next">다음</a>
+			</li>
+			{% else %}
+			<li class="page-item disabled">
+				<a class="page-link" tabindex = "-1" aria-disabled="true">다음</a>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+{% endblock %}

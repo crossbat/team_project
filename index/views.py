@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from eventNews.models import Notification, News
+from event.models import Notification
+from news.models import News
 
 def index(request):
 	noti_list = Notification.objects.all().order_by('-create_date')[:3]
