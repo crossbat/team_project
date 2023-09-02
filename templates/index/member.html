@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<header class="bg-dark">
+	<div class="container-fluid px-5 pt-5">
+		<div class="row gx-5 py-5 justify-content-center">
+			<div class="col-lg-6 d-flex justify-content-center align-items-center">
+				<div class="text-center my-5">
+					<h1 class="display-5 fw-bolder text-white ">단체소개</h1>
+				</div>
+			</div>
+				<div class = "d-flex justify-content-center">
+					<span class = "little_nav"><a class = "channel" href="{% url 'index:intro' %}">소개글</a></span>
+					<span class = "little_nav">|</span>
+					<span class = "little_nav"><a class = "channel" href="{% url 'index:mission' %}">미션 및 비전</a></span>
+					<span class = "little_nav">|</span>
+					<span class = "little_nav"><a class = "channel" href="{% url 'index:member' %}">협회원 소개</a></span>
+		</div>
+	</div>
+</header>
+<section class = 'container'>
+	<div class = 'd-flex justify-content-center'>
+		<p class = 'display-6 fw-bolder p-5 mt-3 border-bottom text-cetner'>협회원 소개</p>
+	</div>
+	
+</section>
+{% endblock %}

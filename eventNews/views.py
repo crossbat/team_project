@@ -12,7 +12,7 @@ def event(request):
 	noti_obj = noti_paginator.get_page(noti_page)
 	context = {"noti_list" : noti_obj}
 	
-	return render(request, "event.html", context)
+	return render(request, "eventNews/event.html", context)
 
 def news(request):
 	news_page = request.GET.get('news', '1')
@@ -21,5 +21,5 @@ def news(request):
 	news_obj = news_paginator.get_page(news_page)
 	context = {"news_list" : news_obj}
 
-	return render(request, "news.html", context)
+	return render(request, "eventNews/news.html", context)
 
