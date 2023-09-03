@@ -6,5 +6,5 @@ app_name = "event"
 
 urlpatterns = [
 		path("", views.event, name = "event"),
-		path('/<int:noti_id>/', views.detail),
+		path('/<int:noti_id>', views.detail),
 ]

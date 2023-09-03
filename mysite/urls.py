@@ -17,12 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls, name = "admin"),
     path('', include('index.urls'), name = "index"),
-		path('event', include('event.urls')),
-		path("news", include('news.urls')),
-		path("post", include("post.urls")),
-]
+	path('event', include('event.urls')),
+	path("news", include('news.urls')),
+	path("post", include("post.urls")),
+    path("ckeditor/", include('ckeditor_uploader.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
