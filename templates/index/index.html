@@ -62,18 +62,18 @@
 	<div class="container-fluid px-5 my-5">
 		<div class="row gx-5 justify-content-center">
 			<div class="col-5">
-				<div class="d-flex text-dark mb-1 align-items-center fs-2">
+				<div class="d-flex text-dark mb-1 align-items-center" style = "font-size : 2vw">
 					<i class="bi bi-caret-right-fill"></i>
-					<span class="fs-3 fw-bolder" style = "padding-left : 15px;">공지사항</span>
+					<span class="fw-bolder" style = "padding-left : 15px;">공지사항</span>
 				</div>
-				<table class = "table fs-5">
+				<table class = "table" style = "font-size : 1.3vw">
 					{% for noti in noti_list %}
 					<tr>
 						<td><a href="/event/{{ noti.id }}" class = "text-decoration-none text-black">{{noti.subject}}</a></td>
 					</tr>
 					{% endfor %}
 				</table>
-				<div class = "d-flex justify-content-end">
+				<div class = "d-flex justify-content-end" style = "font-size : 1.3vw">
 					<a class="text-decoration-none" href="{% url 'event:event' %}">
 						더보기
 						<i class="bi bi-arrow-right"></i>
@@ -81,18 +81,18 @@
 				</div>
 			</div>
 			<div class="col-5">
-				<div class="d-flex text-dark mb-1 align-items-center fs-2">
+				<div class="d-flex text-dark mb-1 align-items-center" style = "font-size : 2vw">
 					<i class="bi bi-caret-right-fill"></i>
-					<span class="fs-3 fw-bolder" style = "padding-left : 15px;">뉴스</span>
+					<span class="fw-bolder" style = "padding-left : 15px;">뉴스</span>
 				</div>
-				<table class = "table fs-5">
+				<table class = "table" style = "font-size : 1.3vw">
 					{% for news in news_list%}
 					<tr>
 						<td><a href="/news/{{ news.id }}" class = "text-decoration-none text-black">{{news.subject}}</a></td>
 					</tr>
 					{% endfor %}
 				</table>
-				<div class = "d-flex justify-content-end">
+				<div class = "d-flex justify-content-end" style = "font-size : 1.3vw">
 					<a class="text-decoration-none" href="{% url 'news:news' %}">
 						더보기
 						<i class="bi bi-arrow-right"></i>

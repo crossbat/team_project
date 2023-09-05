@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<header class="bg-dark">
+	<div class="container-fluid p-5">
+		<div class="row gx-5 pt-5 justify-content-center">
+			<div class="col-lg-6 d-flex justify-content-center align-items-center">
+				<div class="text-center my-5">
+					<h1 class="display-5 fw-bolder text-white mb-2 pb-4">간행물 게시판</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<section class = 'container'>
+	<div class = 'd-flex justify-content-center'>
+		<p class = 'fw-bolder px-5 pt-5 pb-3 mt-3 w-100' style = "font-size : 2vw">{{ post.subject }}</p>
+	</div>
+	<div class = "d-flex justify-content-between border-bottom">
+		<p class = "d-inline-block ps-5 fw-bold">작성자 : {{ post.writer }}</p>
+		<p class = 'd-inline-block pe-5'>작성 날짜 : {{post.create_date}}</p>
+	</div>
+	<div class = 'container p-5'>
+		{{post.content}}
+	</div>
+</section>
+{% endblock %}

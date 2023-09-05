@@ -15,6 +15,17 @@
 <!-- Card section-->
 <div class = "container my-5 pt-5">
 	<div class = "container-lg row">
+		<a href="/post/{{ post.id }}" class = "text-decoration-none">
+			<div class = "col-3 d-flex justify-content-center align-items-center">
+				<div class = "card" style = "width : 15rem">
+					<img src= {% static "image/example2.jpg" %} alt="" class = "card-img-top img-thumbnail" style = "width : 15rem; height : 12rem; object-fit : cover">
+					<div class = "card-body">
+						<h6 class = "card-title">Test Data</h6>
+						<div class = "card-subtitle text-muted">Writer</div>
+					</div>
+				</div>
+			</div>
+		</a>
 		<div class = "col-3 d-flex justify-content-center align-items-center">
 			<div class = "card" style = "width : 15rem">
 				<img src= {% static "image/example2.jpg" %} alt="" class = "card-img-top img-thumbnail" style = "width : 15rem; height : 12rem; object-fit : cover">
